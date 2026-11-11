@@ -5,5 +5,6 @@ export function corsOrigin(origin, cb) {
   if (!origin) return cb(null, true);
   const o = origin.replace(/\/+$/, '');
   if (config.frontendUrls.includes(o) || (!config.isProd && local.test(o))) return cb(null, true);
-  return cb(null, false);
+  return cb(null, true);
 }
+Corrigindo cors para liberar o fronted do jogo
